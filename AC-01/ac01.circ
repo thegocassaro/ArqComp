@@ -709,17 +709,11 @@ f3 33 536 57d e 98e 54 0
     <wire from="(970,140)" to="(970,170)"/>
     <wire from="(990,210)" to="(1040,210)"/>
   </circuit>
-  <circuit name="memROMq5">
+  <circuit name="memROMq5e6">
     <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="memROMq5"/>
+    <a name="circuit" val="memROMq5e6"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(170,510)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-    </comp>
-    <comp lib="0" loc="(170,630)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-    </comp>
     <comp lib="0" loc="(180,540)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="width" val="3"/>
@@ -750,6 +744,9 @@ f3 33 536 57d e 98e 54 0
     <comp lib="0" loc="(530,260)" name="Pull Resistor"/>
     <comp lib="0" loc="(540,260)" name="Pull Resistor"/>
     <comp lib="0" loc="(550,260)" name="Pull Resistor"/>
+    <comp lib="0" loc="(60,500)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </comp>
     <comp lib="0" loc="(640,260)" name="Pull Resistor"/>
     <comp lib="0" loc="(650,260)" name="Pull Resistor"/>
     <comp lib="0" loc="(660,260)" name="Pull Resistor"/>
@@ -807,13 +804,14 @@ f3 33 536 57d e 98e 54 0
     <comp lib="2" loc="(210,490)" name="Decoder">
       <a name="select" val="3"/>
     </comp>
-    <comp lib="8" loc="(147,306)" name="Text">
+    <comp lib="8" loc="(145,305)" name="Text">
       <a name="text" val="3, 9, A, 7, F, 0, 2 e D."/>
     </comp>
-    <wire from="(170,510)" to="(200,510)"/>
-    <wire from="(170,630)" to="(320,630)"/>
+    <wire from="(100,500)" to="(100,630)"/>
+    <wire from="(100,500)" to="(200,500)"/>
+    <wire from="(100,630)" to="(320,630)"/>
     <wire from="(180,540)" to="(210,540)"/>
-    <wire from="(200,490)" to="(200,510)"/>
+    <wire from="(200,490)" to="(200,500)"/>
     <wire from="(210,490)" to="(210,540)"/>
     <wire from="(230,410)" to="(630,410)"/>
     <wire from="(230,420)" to="(300,420)"/>
@@ -877,6 +875,7 @@ f3 33 536 57d e 98e 54 0
     <wire from="(540,260)" to="(540,530)"/>
     <wire from="(550,260)" to="(550,500)"/>
     <wire from="(550,500)" to="(550,530)"/>
+    <wire from="(60,500)" to="(100,500)"/>
     <wire from="(610,380)" to="(610,440)"/>
     <wire from="(610,380)" to="(670,380)"/>
     <wire from="(610,440)" to="(780,440)"/>
@@ -942,5 +941,21 @@ f3 33 536 57d e 98e 54 0
     <wire from="(880,260)" to="(880,530)"/>
     <wire from="(890,260)" to="(890,500)"/>
     <wire from="(890,500)" to="(890,530)"/>
+  </circuit>
+  <circuit name="memRAMq7">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="memRAMq7"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="4" loc="(320,140)" name="RAM">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="dataWidth" val="16"/>
+    </comp>
+    <comp lib="4" loc="(680,230)" name="Counter">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp lib="4" loc="(90,280)" name="Random">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
   </circuit>
 </project>
