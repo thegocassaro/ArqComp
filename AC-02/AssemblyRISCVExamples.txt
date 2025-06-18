@@ -1,0 +1,73 @@
+C:
+
+i=0;
+do{
+	y=y+2;
+	i=i+1;
+} while(i<10);
+
+Assembly:
+
+li a1, 0
+loop:
+addi a2, a2, 2
+addi a1, a1, 1
+bge a1, 10, break
+J loop
+
+break: ...
+
+-------------------------
+
+C:
+
+if(i == j) A[i] = j;
+else if(i > j) A[j] += 10;
+else return 0;
+
+Assembly:
+
+i em a1, j em a2, A em a3
+
+beq a1, a2, if
+bgt a1, a2, elseif
+
+li v0, 0			#else #v0 registrador de retorno padrao de inteiros
+jr ra				#assumindo q estamos dentro de uma funcao #poderia usar ret tambem (equivalentes)
+
+if:
+sll t1, a1, 2		#mult i por 4
+add t3, t1, a3
+sw a2, 0(t3)
+jr ra
+
+elseif:
+sll t2, a2, 2		#mult j por 4
+add t4, a3, t2
+lw t5, 0(t4)
+addi t5, t5, 10
+sw t5, 0(t4)
+jr ra
+
+-------------------------
+
+Exercício interpretado:
+in: a0=endereço inicial de uma cadeia de caracteres terminada em 0, a1=caractere a ser procurado
+out: a0=primeira posição da cadeia onde a letra ocorre, ou 0 caso não encontre
+
+Assembly:
+
+li t1, 48				#t1 = '0' (48)
+
+loop:
+lb t0, 0(a0)
+beq t0, t1, notfind
+beq t0, a1, break
+addi a0, a0, 1			#a0++
+j loop
+
+notfind:
+and a0, a0, x0			#a0 = 0 #poderia fazer também li a0, 0
+j break
+
+break: ...

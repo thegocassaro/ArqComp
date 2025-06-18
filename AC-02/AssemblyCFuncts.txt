@@ -1,0 +1,21 @@
+-------------------------
+
+int strlen(const char *str);
+char *strcpy(char *destination, const char *source);
+int strcmp(const char *str1, const char *str2);
+char *strcat(char *destination, const char *source);
+
+strlen:
+
+start:
+lb a0, 0(str)
+li t0, 0
+
+loop:
+beq a0, '\0', end
+addi t0, t0, 1
+j loop
+
+end:
+ v0, t0
+ret
