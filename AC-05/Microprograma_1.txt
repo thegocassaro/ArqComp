@@ -1,0 +1,10 @@
+MEMrd, MEMwr, FLGwr, IRwr, MDRwr, MDRrd, PCwr, PCrd, Awr, Ard, ACCwr, ACCrd, ACCcl, MARwr, ALUop
+
+FETCH:  PCrd; MARrd; ALUop=INC; ACCrd; NEXT
+        IRwr; ACCwr, PCrd; DISPATCH
+NOP:    FETCH
+STA:    PCrd; MARrd; ALUop=INC; ACCwr; NEXT
+        ACCrd; PCwr; NEXT                       #esse aqui seria um caso de endereçamento direto, mas
+        Ard; MDRwr; NEXT                        no gabarito é um indireto, onde pegamos o endereço de destino 
+        MEMwr; FETCH                            dentro do endereço da instrução, vou fazer como indireto nas proximas
+LDA:    
